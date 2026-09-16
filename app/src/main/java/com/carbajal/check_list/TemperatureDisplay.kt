@@ -21,9 +21,9 @@ fun TemperatureDisplay(){
     //Evaluamos la variable temperatura
 
     val colorTexto = when {
-        temperatura > 30 -> Color.Red
-        temperatura < 20 -> Color.Green
-        temperatura < 10 -> Color.Blue
+        temperatura >= 30 -> Color.Red
+        temperatura >= 20 -> Color.Green
+        temperatura < 20 -> Color.Blue
         else -> Color.Black
     }
     Column(
@@ -39,9 +39,27 @@ fun TemperatureDisplay(){
             color = colorTexto)
 
         Spacer(modifier = Modifier.height(16.dp))
-
         //FIla de botones para subir y bajar
 
-     }
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp) //organizar espacios en el eje horizontal
+        ) {
+            Button(
+                onClick = { temperatura++ }
+            ) {
+                Text(text = "Subir")
+            }
+            Button( onClick = { temperatura-- }) {
+                Text(text = "Bajar")
+            }
+        }
+        Spacer(modifier = Modifier.height(10.dp))
 
+        //Boton para reiniciar a 20
+        Button(
+            onClick = {temperatura = 20}
+        ) {
+            Text(text = "Resetear")
+        }
+     }
 }
