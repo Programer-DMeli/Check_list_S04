@@ -38,12 +38,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Check_listTheme {
-                    ListaTareas()
+                    TemperatureDisplay()
                 }
             }
         }
     }
-
 
 @Preview(showBackground = true)
 @Composable
