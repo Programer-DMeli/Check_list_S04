@@ -69,7 +69,6 @@ fun PantallaTareas() {
     ) {
         Spacer(modifier = Modifier.height(48.dp))
 
-        // Título principal según la imagen
         Text(
             text = "Lista de tareas - Tecsup",
             fontSize = 22.sp,
@@ -120,15 +119,13 @@ fun PantallaTareas() {
         // Contador de tareas
         Text(
             text = "Total de tareas: ${listaTareas.size}",
-            fontSize = 16.sp,
+            fontSize = 18.sp,
             color = Color.DarkGray,
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        // Lista de tareas
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
@@ -147,8 +144,6 @@ fun PantallaTareas() {
         }
     }
 }
-
-// Tarjeta individual ajustada al diseño visual exacto
 @Composable
 fun ItemTarea(
     tarea: Tarea,
